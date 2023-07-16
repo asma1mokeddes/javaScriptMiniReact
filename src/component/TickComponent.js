@@ -1,6 +1,6 @@
 import { type_check } from "../lib/react-utils.js";
-import { MiniReact } from "../lib/react.js";
-import { Component } from "./../lib/react-component.js";
+import { MiniReactRender } from "../lib/react.js";
+import { Component } from "../lib/react-component.js";
 
 export class TickComponent extends Component {
   constructor(properties) {
@@ -10,10 +10,10 @@ export class TickComponent extends Component {
   }
 
   render = () => {
-    const result = MiniReact.createElement(
+    return  MiniReactRender.createElement(
       "div",
       { class: "container text-center" },
-      MiniReact.createElement(
+      MiniReactRender.createElement(
         "h1",
         { class: "icecub", id: "horloge" },
         `${
@@ -23,8 +23,6 @@ export class TickComponent extends Component {
         }`
       )
     );
-
-    return result;
   };
 
   tick = () => {

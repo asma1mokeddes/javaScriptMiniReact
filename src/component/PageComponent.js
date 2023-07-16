@@ -1,4 +1,4 @@
-import { MiniReact } from "../lib/react.js";
+import { MiniReactRender } from "../lib/react.js";
 import { Component } from "./../lib/react-component.js";
 
 export class PageComponent extends Component {
@@ -7,9 +7,9 @@ export class PageComponent extends Component {
   }
 
   render = () => {
-    const result = MiniReact.createElement("div", { id: "main" },
-      MiniReact.createElement("div", {id: "header"}, ""),
-      MiniReact.createElement("div", {id: "content"}, "")
+    const result = MiniReactRender.createElement("div", { id: "main" },
+      MiniReactRender.createElement("div", {id: "header"}, ""),
+      MiniReactRender.createElement("div", {id: "content"}, "")
     );
     return result;
   };

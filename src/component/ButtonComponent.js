@@ -1,4 +1,4 @@
-import { MiniReact } from "../lib/react.js";
+import { MiniReactRender } from "../lib/react.js";
 import { Component } from "../lib/react-component.js";
 
 export class ButtonComponent extends Component {
@@ -7,7 +7,7 @@ export class ButtonComponent extends Component {
   }
 
   render() {
-    const result = MiniReact.createElement(
+    const result = MiniReactRender.createElement(
       "button",
       { class: "btn", onclick: this.properties.onClick },
       `Restart`

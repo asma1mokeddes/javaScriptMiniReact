@@ -1,4 +1,4 @@
-import { MiniReact } from "../lib/react.js";
+import { MiniReactRender } from "../lib/react.js";
 import { Component } from "../lib/react-component.js";
 
 export class InputFileComponent extends Component {
@@ -15,10 +15,10 @@ export class InputFileComponent extends Component {
   }
 
   render() {
-    const result = MiniReact.createElement(
+    const result = MiniReactRender.createElement(
       "div",
       { class: "container text-center" },
-      MiniReact.createElement(
+      MiniReactRender.createElement(
         "input",
         { type: "file", id: "fileInput", onchange: this.displayAlert },
         ""

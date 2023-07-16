@@ -1,2 +1,2 @@
-# javaScriptMiniReact
-javaScriptMiniReact
+# javaScriptMiniReactRender
+javaScriptMiniReactRender

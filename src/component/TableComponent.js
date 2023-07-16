@@ -1,5 +1,5 @@
 // Importation des dépendances nécessaires
-import { MiniReact } from "../lib/react.js";
+import { MiniReactRender } from "../lib/react.js";
 import { Component } from "../lib/react-component.js";
 import { prop_access } from "../lib/react-utils.js";
 
@@ -8,53 +8,54 @@ export class TableComponent extends Component {
   constructor(properties) {
     super(properties);
 
-    // Définition du scoreboard par défaut s'il n'existe pas dans le localStorage
-    if (localStorage.getItem("scoreboard") == null) {
-      this.scoreboard = {
+    // Définition du classement par défaut s'il n'existe pas dans le localStorage
+    if (localStorage.getItem("classement") == null) {
+      this.classement = {
         asma: 80,
-        kev: 58,
-        lolo: 47,
+        riadh: 58,
+        hicham: 47,
         you: 0
       };
     } else {
-      // Récupération du scoreboard depuis le localStorage
-      this.scoreboard = JSON.parse(localStorage.getItem("scoreboard"));
+      // Récupération du classement depuis le localStorage
+      this.classement = JSON.parse(localStorage.getItem("classement"));
+      console.log(this.classement);
     }
   }
 
   // Méthode de rendu du composant
   render = () => {
     // Création de l'élément de l'interface utilisateur représentant le tableau de classement
-    const result = MiniReact.createElement(
+    const result = MiniReactRender.createElement(
       "div",
       { class: "container" },
-      MiniReact.createElement(
+      MiniReactRender.createElement(
         "h1",
         { class: "color text-center mb-1" },
         "Classement"
       ),
-      MiniReact.createElement(
+      MiniReactRender.createElement(
         "div",
         { class: "container text-center" },
-        MiniReact.createElement(
+        MiniReactRender.createElement(
           "h3",
           null,
-          `Asmaa : ${prop_access(this.scoreboard, "asma")}`
+          `Asmaa : ${prop_access(this.classement, "asma")}`
         ),
-        MiniReact.createElement(
+        MiniReactRender.createElement(
           "h3",
           null,
-          `Ryad : ${prop_access(this.scoreboard, "kev")}`
+          `Riadh : ${prop_access(this.classement, "riadh")}`
         ),
-        MiniReact.createElement(
+        MiniReactRender.createElement(
           "h3",
           null,
-          `Hicham : ${prop_access(this.scoreboard, "lolo")}`
+          `Hicham : ${prop_access(this.classement, "hicham")}`
         ),
-        MiniReact.createElement(
+        MiniReactRender.createElement(
           "h3",
           { class: "color" },
-          `You : ${prop_access(this.scoreboard, "you")}`
+          `You : ${prop_access(this.classement, "you")}`
         )
       )
     );

@@ -39,13 +39,13 @@ export const createElement = (element, properties, ...children) => {
 };
 
 // Permet d'exposer la classe
-export const MiniReact = {
+export const MiniReactRender = {
   createElement,
   Component
 };
 
 // Expose la méthode render
-export const MiniReactDOM = {
+export const MiniReactRenderDOM = {
   render: (element, domElement, properties = {}) => {
     var prevChild = null;
     var el = new element(properties);
