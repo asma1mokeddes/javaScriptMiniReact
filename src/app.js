@@ -1,31 +1,32 @@
-import { MiniReactDOM } from "./lib/react.js";
-import { router, route } from "./router.js";
-import { TickComponent } from "./component/TickComponent.js";
-import { TableComponent } from "./component/TableComponent.js";
-import { HeaderComponent } from "./component/HeaderComponent.js";
-import { PageComponent } from "./component/PageComponent.js";
-import { ErrorNotFoundComponent } from "./component/NotFoundComponent.js";
-import { JitterComponent } from "./component/JitterComponent.js";
-import { InputFileComponent } from "./component/InputFileComponent.js";
+import {MiniReactRenderDOM} from "./lib/react.js";
+import {route, router} from "./router.js";
+import {TickComponent} from "./component/TickComponent.js";
+import {TableComponent} from "./component/TableComponent.js";
+import {HeaderComponent} from "./component/HeaderComponent.js";
+import {PageComponent} from "./component/PageComponent.js";
+import {ErrorNotFoundComponent} from "./component/NotFoundComponent.js";
+import {JitterComponent} from "./component/JitterComponent.js";
+import {InputFileComponent} from "./component/InputFileComponent.js";
+import {ModalComponent} from "./component/ModalComponent.js";
 
 // Initialisation de l'arboresence
-MiniReactDOM.render(PageComponent, document.getElementById("root"), {});
-MiniReactDOM.render(HeaderComponent, document.getElementById("header"), {
+MiniReactRenderDOM.render(PageComponent, document.getElementById("root"), {});
+MiniReactRenderDOM.render(HeaderComponent, document.getElementById("header"), {
   router // Je me sers du routeur pour crée mon composant
 });
 
 // Detecte si l'initialisation de l'arboresence c'est bien effectué
-let promise = new Promise(function(resolve, reject) {
+let promise = new Promise(function (resolve, reject) {
   // Récuperation du content
   let contentElement = document.getElementById("content");
 
-  // On vérifie qu'on a bien un content dans le DOM pour permettre au MiniReact de fonctionner
+  // On vérifie qu'on a bien un content dans le DOM pour permettre au MiniReactRender de fonctionner
   if (contentElement)
-    resolve("Content element found !  MiniReact can work ! Yay !");
+    resolve("Content element found !  MiniReactRender can work ! Yay !");
   else
     reject(
       Error(
-        "No  ontent element found... MiniReact won't work :( Please use Google Chrome !"
+          "No  ontent element found... MiniReactRender won't work :( Please use Google Chrome !"
       )
     );
 });
@@ -38,32 +39,39 @@ promise.then(
     switch (!route ? null : route.getId()) {
       case "home":
         // Si on est sur la route home
-        MiniReactDOM.render(TickComponent, contentElement, {
+        MiniReactRenderDOM.render(TickComponent, contentElement, {
           interval: 1000
         });
         break;
 
       case "score":
         // Si on est sur la route tableau
-        MiniReactDOM.render(TableComponent, contentElement, {});
+        MiniReactRenderDOM.render(TableComponent, contentElement, {});
         break;
 
       case "jitterclick":
         // Si on est sur la route jitterclick
-        MiniReactDOM.render(JitterComponent, contentElement, {
+        MiniReactRenderDOM.render(JitterComponent, contentElement, {
           interval: 5
+        });
+        break;
+
+     case "modal":
+        MiniReactRenderDOM.render(ModalComponent, contentElement, {
+            content:
+                'Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l\'imprimerie depuis les années 1500, quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n\'a pas fait que survivre cinq siècles, mais s\'est aussi adapté à la bureautique informatique, sans que son contenu n\'en soit modifié. Il a été popularisé dans les années 1960 grâce à la vente de feuilles Letraset contenant des passages du Lorem Ipsum, et, plus récemment, par son inclusion dans des applications de mise en page de texte, comme Aldus PageMaker.'
         });
         break;
 
       case "file":
         // Si on est sur la route file
-        MiniReactDOM.render(InputFileComponent, contentElement, {});
+        MiniReactRenderDOM.render(InputFileComponent, contentElement, {});
         break;
 
       default:
         console.log("oui");
         // Not found
-        MiniReactDOM.render(ErrorNotFoundComponent, contentElement, {});
+        MiniReactRenderDOM.render(ErrorNotFoundComponent, contentElement, {});
         break;
     }
   },
