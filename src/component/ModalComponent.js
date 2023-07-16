@@ -19,7 +19,7 @@ export class ModalComponent extends Component {
 
     render() {
         const {isOpen} = this.state;
-        const {buttonText, content} = this.properties;
+        const {content} = this.properties;
         if (isOpen === true) {
             return MiniReactRender.createElement(
                 "div",

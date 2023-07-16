@@ -26,7 +26,7 @@ export class TableComponent extends Component {
   // Méthode de rendu du composant
   render = () => {
     // Création de l'élément de l'interface utilisateur représentant le tableau de classement
-    const result = MiniReactRender.createElement(
+    return  MiniReactRender.createElement(
       "div",
       { class: "container" },
       MiniReactRender.createElement(
@@ -59,6 +59,5 @@ export class TableComponent extends Component {
         )
       )
     );
-    return result; // Retourne l'élément de l'interface utilisateur
   };
 }

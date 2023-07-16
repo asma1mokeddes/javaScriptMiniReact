@@ -7,11 +7,10 @@ export class ButtonComponent extends Component {
   }
 
   render() {
-    const result = MiniReactRender.createElement(
+    return  MiniReactRender.createElement(
       "button",
       { class: "btn", onclick: this.properties.onClick },
       `Restart`
     );
-    return result;
   }
 }

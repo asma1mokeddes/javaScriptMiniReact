@@ -1,5 +1,5 @@
 import { MiniReactRender } from "../lib/react.js";
-import { Component } from "./../lib/react-component.js";
+import { Component } from "../lib/react-component.js";
 
 export class ErrorNotFoundComponent extends Component {
   constructor(properties) {
@@ -7,11 +7,10 @@ export class ErrorNotFoundComponent extends Component {
   }
 
   render = () => {
-    const result = MiniReactRender.createElement(
+    return  MiniReactRender.createElement(
       "h2",
       { class: "container text-center" },
       `Error 404 : Not Found (url : ${window.location.pathname})`
     );
-    return result;
   };
 }

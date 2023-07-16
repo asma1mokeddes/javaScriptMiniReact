@@ -47,12 +47,11 @@ export const MiniReactRender = {
 // Expose la méthode render
 export const MiniReactRenderDOM = {
   render: (element, domElement, properties = {}) => {
-    var prevChild = null;
-    var el = new element(properties);
-    var prevChild = el.display();
+    let el = new element(properties);
+    let prevChild = el.display();
 
     el.componentDidUpdate = () => {
-      var child = el.display();
+      let child = el.display();
       domElement.replaceChild(child, prevChild);
       prevChild = child;
     };

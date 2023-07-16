@@ -33,7 +33,7 @@ export class HeaderComponent extends Component {
       })[0];
 
       // Creation de l'arboresence
-      const result = MiniReactRender.createElement(
+      return MiniReactRender.createElement(
           "header",
           {class: "container text-center color mb-5"},
           MiniReactRender.createElement("h2", null, `${this.headerTitle}`),
@@ -106,11 +106,7 @@ export class HeaderComponent extends Component {
                   },
                   routeModal.getName()
               ),
-
           )
-
-    );
-
-    return result;
+      );
   };
 }

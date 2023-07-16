@@ -15,7 +15,7 @@ export class InputFileComponent extends Component {
   }
 
   render() {
-    const result = MiniReactRender.createElement(
+    return  MiniReactRender.createElement(
       "div",
       { class: "container text-center" },
       MiniReactRender.createElement(
@@ -24,6 +24,5 @@ export class InputFileComponent extends Component {
         ""
       )
     );
-    return result;
   }
 }
