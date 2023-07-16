@@ -1,19 +1,17 @@
-import Component from './Component.js';
+import { MiniReact } from "../lib/react.js";
+import { Component } from "../lib/react-component.js";
 
-class ButtonComponent extends Component {
-  constructor(props) {
-    super(props);
+export class ButtonComponent extends Component {
+  constructor(properties) {
+    super(properties);
   }
 
   render() {
-    const { label, onClick } = this.props;
-
-    const button = document.createElement('button');
-    button.textContent = label;
-    button.addEventListener('click', onClick);
-
-    return button;
+    const result = MiniReact.createElement(
+      "button",
+      { class: "btn", onclick: this.properties.onClick },
+      `Restart`
+    );
+    return result;
   }
 }
-
-export default ButtonComponent;

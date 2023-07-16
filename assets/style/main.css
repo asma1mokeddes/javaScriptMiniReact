@@ -1,0 +1,103 @@
+/* --- PRIMITIF --- */
+body {
+  background: #416d90;
+  color: rgb(252, 252, 252);
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+nav {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: #f5f5f5;
+  padding: 5px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #000000;
+  padding: 5px 10px;
+}
+
+nav a:hover {
+  background-color: #416d90;
+}
+
+a {
+  display: block;
+  text-align: center;
+  padding: 10px;
+  text-decoration: none;
+  min-width: 100px;
+}
+
+a:hover {
+  color: white;
+}
+
+/* --- Classes --- */
+.container {
+  width: 50%;
+  margin: auto;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.link {
+  cursor: pointer;
+}
+
+.color {
+  color: rgb(6, 9, 52);
+}
+
+/* --- Marges --- */
+.mb-5 {
+  margin-bottom: 5em;
+}
+
+.mb-1 {
+  margin-bottom: 1em;
+}
+
+.mt-5 {
+  margin-top: 5em;
+}
+
+/* Buttons */
+.btn {
+  color: #ffffff;
+  border-radius: 3px;
+  border-color: #000000;
+  background: rgba(0, 0, 0, 0);
+}
+
+.btn:hover {
+  color: black;
+  border-radius: 3px;
+  border-color: #000000;
+  background: #327b59;
+}
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+
+.score-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.score-container h3 {
+  margin: 5px;
+}
+
+.score-container .color {
+  font-weight: bold;
+}
+
