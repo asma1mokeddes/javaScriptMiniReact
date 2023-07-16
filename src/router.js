@@ -7,6 +7,7 @@ export let router = new Router("mainRouter", [
   new Route("File", "file", "/file", "link color"),
   new Route("JitterClick", "jitterclick", "/jitterclick", "link color"),
   new Route("Modal", "modal", "/modal", "link color"),
+  new Route("Toggle", "toggle", "/toggle", "link color"),
 ]);
 
 // Prend la route courrante

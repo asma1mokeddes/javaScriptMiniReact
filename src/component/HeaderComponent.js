@@ -31,6 +31,9 @@ export class HeaderComponent extends Component {
       let routeModal = this.routes.filter(function (r) {
           return r.getId() === "modal";
       })[0];
+      let routeToggle = this.routes.filter(function (r) {
+            return r.getId() === "toggle";
+      })[0];
 
       // Creation de l'arboresence
       return MiniReactRender.createElement(
@@ -105,6 +108,19 @@ export class HeaderComponent extends Component {
                               : ""
                   },
                   routeModal.getName()
+              ),
+              MiniReactRender.createElement(
+                  "a",
+                  {
+                      class: routeToggle.getClassName(),
+                      id: routeToggle.getId(),
+                      href: "." + routeToggle.getPath(),
+                      style:
+                          this.selectedLink === routeToggle.getPath()
+                              ? "text-decoration: underline"
+                              : ""
+                  },
+                  routeToggle.getName()
               ),
           )
       );
